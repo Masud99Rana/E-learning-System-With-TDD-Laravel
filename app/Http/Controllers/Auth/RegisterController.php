@@ -8,6 +8,10 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Mail;
+use Illuminate\Http\Request;
+use App\Mail\ConfirmYourEmail;
 
 class RegisterController extends Controller
 {
@@ -52,7 +56,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
     }
 
@@ -66,8 +70,23 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'username' => Str::slug($data['name']),
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'confirm_token' => Str::random(25),
         ]);
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        Mail::to($user)->send(new ConfirmYourEmail($user));
+        return redirect($this->redirectPath());
     }
 }

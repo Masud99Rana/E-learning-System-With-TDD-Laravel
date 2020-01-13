@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','username', 'email', 'password','confirm_token'
     ];
 
     /**
@@ -36,4 +36,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Checks if user's email has been confirmed
+     *
+     * @return boolean
+     */
+    public function isConfirmed()
+    {
+        return $this->confirm_token == null;
+    }
+
+    /**
+     * Confirm a user's email
+     *
+     * @return void
+     */
+    public function confirm() 
+    {
+        $this->confirm_token = null;
+        $this->save();
+    }
 }
