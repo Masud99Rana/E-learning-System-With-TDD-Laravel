@@ -57,4 +57,14 @@ class User extends Authenticatable
         $this->confirm_token = null;
         $this->save();
     }
+
+    /**
+     * Check if current user is an administrator
+     *
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return in_array($this->email, config('mrcasts.administrators'));
+    }
 }

@@ -12,10 +12,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateSeriesTest extends TestCase
 {
-	use RefreshDatabase;
+	// use RefreshDatabase;
 
     public function test_a_user_can_create_a_series()
-    {
+    {   
+        $this->loginAdmin(); // helper function from Testcase
+
     	$this->withoutExceptionHandling();
 
     	Storage::fake(config('filesystems.default'));
@@ -38,6 +40,8 @@ class CreateSeriesTest extends TestCase
 
     public function test_a_series_must_be_created_with_a_title()
     {
+        $this->loginAdmin(); // helper function from Testcase
+        
         $this->post('/admin/series', [
             'description' => 'the best vue casts ever',
             'image' => UploadedFile::fake()->image('image-series.png')
@@ -47,6 +51,8 @@ class CreateSeriesTest extends TestCase
 
     public function test_a_series_must_be_created_with_a_description()
     {
+        $this->loginAdmin(); // helper function from Testcase
+
         $this->post('/admin/series', [
             'title' => 'the best vue casts ever',
             'image' => UploadedFile::fake()->image('image-series.png')
@@ -55,6 +61,8 @@ class CreateSeriesTest extends TestCase
 
     public function test_a_series_must_be_created_with_an_image()
     {
+        $this->loginAdmin(); // helper function from Testcase
+        
         $this->post('/admin/series', [ 
             'title' => 'the best vue casts ever',
             'description' => 'course description'
@@ -63,11 +71,22 @@ class CreateSeriesTest extends TestCase
 
     public function test_a_series_must_be_created_with_an_image_which_is_actually_an_image()
     {
+        $this->loginAdmin(); // helper function from Testcase
+   
         $this->post('/admin/series', [
             'title' => 'the best vue casts ever',
             'description' => 'course description',
             'image' => 'STRING_INVALID_IMAGE'
         ])->assertSessionHasErrors('image');
+    }
+
+    public function test_only_administrators_can_create_series()
+    {
+        $this->actingAs(
+            factory(User::class)->create()
+        );
+        $this->post('admin/series')
+            ->assertSessionHas('error', 'You are not authorized to perform this action');
     }
 
 }

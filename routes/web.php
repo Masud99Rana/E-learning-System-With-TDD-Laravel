@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('register/confirm', 'ConfirmEmailController@index')->name('confirm-email');
 Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
 
-Route::prefix('admin')->group(function(){
+Route::middleware('admin')->prefix('admin')->group(function(){
 	Route::resource('series','Admin\SeriesController');
 });
 
