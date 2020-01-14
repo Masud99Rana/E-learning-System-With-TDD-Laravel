@@ -16,7 +16,7 @@ class ConfirmEmailTest extends TestCase
     	
     	$user = factory(User::class)->create();	
 
-        dd($user);
+        // dd($user);
 
     	$this->get("/register/confirm/?token={$user->confirm_token}")
     		->assertRedirect('/')

@@ -17,10 +17,10 @@ Route::get('/', function () {
 });
 
 Route::get('register/confirm', 'ConfirmEmailController@index')->name('confirm-email');
+Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
 
-
-Route::get('/logout', function () {
-    auth()->logout();
+Route::prefix('admin')->group(function(){
+	Route::resource('series','Admin\SeriesController');
 });
 
 Auth::routes();
