@@ -2,14 +2,16 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Factory;
+use App\Series;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
-$factory->define(Factory::class, function (Faker $faker) {
+
+$factory->define(Series::class, function (Faker $faker) {
 	$title = $faker->sentence(5);
     return [
         'title' => $title,
-        'slug' => str_slug($title),
+        'slug' => Str::slug($title),
         'image_url' => asset('assets/img/series.jpg'),
         'description' => $faker->paragraph()
     ];

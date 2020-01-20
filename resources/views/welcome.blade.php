@@ -13,8 +13,6 @@
         <p class="lead text-white fs-20 hidden-sm-down"><span class="fw-400">MR CASTS</span> is an e-learnig <br>subscription based SaaS  application powered with Vuejs and <span class="mark-border">Laravel 6   </span>.</p>
 
         <br><br><br>
-<h2>Image is below</h2>
-        <img src="{{ asset('storage/series/hello-image.jpg') }}" alt="">
 
         <a class="btn btn-lg btn-round w-200 btn-primary mr-16" href="/series">View more</a>
 

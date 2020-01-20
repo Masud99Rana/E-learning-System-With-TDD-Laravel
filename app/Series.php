@@ -3,10 +3,28 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Lesson;
 
 class Series extends Model
 {
     protected $guarded = [];
+
+    /**
+     * Eager load relationships
+     *
+     * @var array
+     */
+    protected $with = ['lessons'];
+
+    /**
+     * A series has many lessons
+     *
+     * @return void
+     */
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 
     /**
      * Get the route key for the model.

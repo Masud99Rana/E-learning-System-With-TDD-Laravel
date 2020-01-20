@@ -75,6 +75,10 @@
 @if (!auth()->check())
     <vue-login></vue-login>
 @endif
+
+@if (auth()->check())
+    <vue-noty></vue-noty>
+@endif
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container">

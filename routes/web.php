@@ -21,6 +21,7 @@ Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
 
 Route::middleware('admin')->prefix('admin')->group(function(){
 	Route::resource('series','Admin\SeriesController');
+	Route::resource('{series_by_id}/lessons','Admin\LessonsController');
 });
 
 Auth::routes();
