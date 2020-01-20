@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\CreateSeriesRequest;
-use Illuminate\Support\Str;
+use App\Http\Requests\UpdateSeriesRequest;
 use App\Series;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SeriesController extends Controller
 {
@@ -15,9 +16,9 @@ class SeriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
-        
+        return view('admin.series.all')->withSeries(Series::all());
     }
 
     /**
@@ -61,9 +62,9 @@ class SeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Series $series)
     {
-        //
+        return view('admin.series.edit')->withSeries($series);
     }
 
     /**
@@ -73,9 +74,12 @@ class SeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateSeriesRequest $request, Series $series)
     {
-        //
+        $request->updateSeries($series);
+
+        session()->flash('success', 'Successfully updated series');
+        return redirect()->route('series.index');
     }
 
     /**

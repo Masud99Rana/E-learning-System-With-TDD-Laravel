@@ -12,7 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateSeriesTest extends TestCase
 {
-	// use RefreshDatabase;
+	use RefreshDatabase;
 
     public function test_a_user_can_create_a_series()
     {   
@@ -83,7 +83,7 @@ class CreateSeriesTest extends TestCase
     public function test_only_administrators_can_create_series()
     {
         $this->actingAs(
-            factory(User::class)->create()
+            factory(User::class)->create(['email' => 'hello@gmail.com'])
         );
         $this->post('admin/series')
             ->assertSessionHas('error', 'You are not authorized to perform this action');

@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
 
     public function test_correct_response_after_user_logs_in()
     {
