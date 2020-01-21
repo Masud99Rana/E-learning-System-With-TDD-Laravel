@@ -47,6 +47,7 @@ Vue.component('vue-noty', require('./components/Noty.vue').default);
 Vue.component('vue-login', require('./components/Login.vue').default);
 
 Vue.component('vue-lessons', require('./components/Lessons.vue').default);
+Vue.component('vue-player', require('./components/Player.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

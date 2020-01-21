@@ -51,3 +51,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'FrontendController@welcome');
+Route::get('/series', 'FrontendController@showAllseries')->name('all-series');
+Route::get('/series/{series}', 'FrontendController@series')->name('series');
+
+Route::middleware('auth')->group(function() {
+
+    Route::get('/watch-series/{series}', 'WatchSeriesController@index')->name('series.learning');
+    Route::get('/series/{series}/lesson/{lesson}', 'WatchSeriesController@showLesson')->name('series.watch');
+});

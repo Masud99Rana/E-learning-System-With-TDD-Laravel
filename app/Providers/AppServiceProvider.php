@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Blade::if('hasStartedSeries', function($series) {
+            return auth()->user()->hasStartedSeries($series);
+        });
+
+        Blade::if('admin', function() {
+            return auth()->user()->isAdmin();
+        });
+
     }
 
     /**

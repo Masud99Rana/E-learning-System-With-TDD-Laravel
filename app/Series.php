@@ -44,4 +44,13 @@ class Series extends Model
     public function getImagePathAttribute() {
         return asset('storage/' . $this->image_url);
     }
+
+    /**
+     * Get a list of lessons for series in watching order
+     *
+     * @return void
+     */
+    public function getOrderedLessons() {
+        return $this->lessons()->orderBy('episode_number', 'asc')->get();
+    }
 }

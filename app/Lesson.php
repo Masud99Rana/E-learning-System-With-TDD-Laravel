@@ -17,4 +17,38 @@ class Lesson extends Model
     public function series() {
         return $this->belongsTo(Series::class);
     }
+
+    /**
+     * Get next lesson after $this 
+     *
+     * @return \App\Lesson
+     */
+    public function getNextLesson() {
+        $nextLesson = $this->series->lessons()->where('episode_number', '>', $this->episode_number)
+                    ->orderBy('episode_number', 'asc')
+                    ->first();
+        
+        if($nextLesson) {
+            return $nextLesson;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous lesson for $this
+     *
+     * @return \App\Lesson
+     */
+    public function getPrevLesson() {
+        $prevLesson = $this->series->lessons()->where('episode_number', '<', $this->episode_number)
+                    ->orderBy('episode_number', 'desc')
+                    ->first();
+        
+        if($prevLesson) {
+            return $prevLesson;
+        }
+
+        return $this;
+    }
 }

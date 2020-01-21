@@ -18,7 +18,7 @@ class UserTest extends TestCase
     	//user
     	//series
     	//lesson
-    	//$user->completeLesson()
+    	//$user-> completeLesson()
     	//redis-> user:12:series:12
     	
     	
