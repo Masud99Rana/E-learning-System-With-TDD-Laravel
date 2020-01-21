@@ -72,4 +72,17 @@ trait Learning {
             $this->getCompletedLessonsForASeries($series)
         )->get();
     }
+
+    /**
+     * Check if user has completed a lesson
+     *
+     * @param [App\Lesson] $lesson
+     * @return boolean
+     */
+    public function hasCompletedLesson($lesson) {
+        return in_array(
+            $lesson->id,
+            $this->getCompletedLessonsForASeries($lesson->series)
+        );
+    }
 }

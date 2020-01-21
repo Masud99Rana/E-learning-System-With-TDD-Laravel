@@ -27,7 +27,13 @@
 
       <div class="row gap-y text-center"> 
         <div class="col-12">          
-            <vue-player default_lesson="{{ $lesson }}"></vue-player>
+            <vue-player default_lesson="{{ $lesson }}" 
+
+              @if($nextLesson->id !== $lesson->id)
+                  next_lesson_url="{{ route('series.watch', ['series' => $series->slug, 'lesson' => $nextLesson->id ]) }}"
+              @endif 
+              
+            ></vue-player>
             
             @if($prevLesson->id !== $lesson->id)
               <a href="{{ route('series.watch', ['series' => $series->slug, 'lesson' => $prevLesson->id ]) }}" class="btn btn-info btn-lg pull-left">Prev Lesson</a>
@@ -45,9 +51,9 @@
                   active
                 @endif
                 ">
-                  {{-- @if(auth()->user()->hasCompletedLesson($l))
+                  @if(auth()->user()->hasCompletedLesson($l))
                     <b><small>COMPLETED</small></b>
-                  @endif --}}
+                  @endif
                   <a href="{{ route('series.watch', ['series' => $series->slug, 'lesson' => $l->id]) }}">{{ $l->title }}</a>
               </li>
             @endforeach            

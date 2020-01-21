@@ -36,4 +36,17 @@ class WatchSeriesController extends Controller
             'lesson' => $lesson
         ]);
     }
+
+    /**
+     * Complete a lesson via ajax
+     *
+     * @param App\Lesson $lesson
+     * @return json response
+     */
+    public function completeLesson(Lesson $lesson) {
+        auth()->user()->completeLesson($lesson);
+        return response()->json([
+            'status' => 'ok'
+        ]);
+    }
 }
