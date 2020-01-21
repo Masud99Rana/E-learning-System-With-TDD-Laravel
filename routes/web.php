@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Redis;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +12,33 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/redis', function () { 
+// key: value // string
+// key: value // list
+// key: value // set
+    
+
+	//=>  key: value // string
+	// Redis::set('friend', 'Maksudur');
+	// dd(Redis::get('friend'));
+
+
+	//=> key: value // list
+	// Redis::lpush('frameworks', ['vuejs', 'laravel']);
+	// dd(Redis::lrange('frameworks',0,-1)); //for all
+	// dd(Redis::lrange('frameworks',0,0)); // index start 0 to end 1;
+
+
+	// key: value // set (set unique value/ set never allow to duplicate value)
+	// Redis::sadd('design', ['css3','html']);
+	// dd(Redis::smembers('design'));
+
+
+	
+});
+
 
 Route::get('/', function () {
     
