@@ -50,6 +50,8 @@ Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/profile/{user}', 'ProfilesController@index')->name('profile');
+
 Route::get('/', 'FrontendController@welcome');
 Route::get('/series', 'FrontendController@showAllseries')->name('all-series');
 Route::get('/series/{series}', 'FrontendController@series')->name('series');
