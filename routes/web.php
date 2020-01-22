@@ -36,7 +36,7 @@ Route::get('/redis', function () {
 	// dd(Redis::smembers('design'));
 
 
-	
+	Redis::flushall();
 });
 
 

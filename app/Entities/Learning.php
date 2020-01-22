@@ -131,4 +131,18 @@ trait Learning {
 
         return $result;
     }
+
+    /**
+     * Get the next lesson the user should watch
+     *
+     * @param [App\Series] $series
+     * @return App\Lesson
+     */
+    public function getNextLessonToWatch($series) {
+        $lessonIds = $this->getCompletedLessonsForASeries($series);
+        $lessonId = end($lessonIds);
+        return Lesson::find(
+            $lessonId
+        )->getNextLesson();
+    }
 }

@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return in_array($this->email, config('mrcasts.administrators'));
     }
+
+    
+    public function getRouteKeyName() {
+        return 'username';
+    }
 }

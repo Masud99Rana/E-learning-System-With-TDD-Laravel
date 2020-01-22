@@ -32,7 +32,7 @@ class Lesson extends Model
             return $nextLesson;
         }
 
-        return $this;
+        return $this; // if not exists current lesson
     }
 
     /**
@@ -49,6 +49,6 @@ class Lesson extends Model
             return $prevLesson;
         }
 
-        return $this;
+        return $this; // if not exists current lesson
     }
 }
