@@ -45,6 +45,7 @@ window.handleErrors = function(error) {
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('vue-noty', require('./components/Noty.vue').default);
 Vue.component('vue-login', require('./components/Login.vue').default);
+Vue.component('vue-stripe', require('./components/Stripe.vue').default);
 
 Vue.component('vue-lessons', require('./components/Lessons.vue').default);
 Vue.component('vue-player', require('./components/Player.vue').default);

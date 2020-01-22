@@ -6,19 +6,18 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Entities\Learning;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Learning;
+    use Notifiable, Learning, Billable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name','username', 'email', 'password','confirm_token'
-    ];
+    protected $guarded =[];
 
     /**
      * The attributes that should be hidden for arrays.

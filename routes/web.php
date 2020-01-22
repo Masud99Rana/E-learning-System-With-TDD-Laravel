@@ -40,9 +40,11 @@ Route::get('/redis', function () {
 });
 
 
-Route::get('/', function () {
-    
-    return view('welcome');
+Route::get('/rr', function () {
+
+    $user = \App\User::find(1);
+    $user->createAsStripeCustomer();
+    // return view('welcome');
 });
 Route::get('register/confirm', 'ConfirmEmailController@index')->name('confirm-email');
 Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
@@ -58,6 +60,8 @@ Route::get('/series/{series}', 'FrontendController@series')->name('series');
 
 Route::middleware('auth')->group(function() {
 
+	Route::get('/subscribe', 'SubscriptionsController@showSubscriptionForm');
+	Route::post('/subscribe', 'SubscriptionsController@subscribe')->name('subscription.create'); 
 
 	Route::post('/series/complete-lesson/{lesson}', 'WatchSeriesController@completeLesson');
 

@@ -110,5 +110,7 @@
     <script src="{{ asset('assets/js/thesaas.min.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
+    @yield('scripts2')
   </body>
 </html>
