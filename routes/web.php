@@ -52,7 +52,6 @@ Route::get('/logout', function() { auth()->logout(); return redirect('/'); });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile/{user}', 'ProfilesController@index')->name('profile');
 
 Route::get('/', 'FrontendController@welcome');
 Route::get('/series', 'FrontendController@showAllseries')->name('all-series');
@@ -60,8 +59,12 @@ Route::get('/series/{series}', 'FrontendController@series')->name('series');
 
 Route::middleware('auth')->group(function() {
 
+	Route::get('/profile/{user}', 'ProfilesController@index')->name('profile');
+	Route::post('/card/update', 'ProfilesController@updateCard');
+	
 	Route::get('/subscribe', 'SubscriptionsController@showSubscriptionForm');
 	Route::post('/subscribe', 'SubscriptionsController@subscribe')->name('subscription.create'); 
+	Route::post('/subscription/change', 'SubscriptionsController@change')->name('subscriptions.change');   
 
 	Route::post('/series/complete-lesson/{lesson}', 'WatchSeriesController@completeLesson');
 
