@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\User;
 
-class ConfirmYourEmail extends Mailable
+class ConfirmYourEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 

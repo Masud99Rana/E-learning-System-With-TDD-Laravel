@@ -8536,3 +8536,4 @@ $...')
 "} 
 [2020-01-23 03:58:23] local.ERROR: Debugbar exception: Trying to get property 'cookies' of non-object  
 [2020-01-23 03:58:35] local.ERROR: Debugbar exception: Trying to get property 'cookies' of non-object  
+[2020-01-23 04:14:39] local.ERROR: Debugbar exception: Trying to get property 'cookies' of non-object  
