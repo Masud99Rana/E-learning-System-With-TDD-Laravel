@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         /*
          * Application Service Providers...
          */

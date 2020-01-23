@@ -60,9 +60,9 @@ class RegistrationTest extends TestCase
             'password' => 'password'
         ])->assertRedirect();
 
+        // Mail::assertSent(ConfirmYourEmail::class);
         //assert that a particular email was sent 
-        Mail::assertSent(ConfirmYourEmail::class);
-        // Mail::assertQueued(ConfirmYourEmail::class);
+        Mail::assertQueued(ConfirmYourEmail::class);
     }
 
 }
