@@ -19,7 +19,7 @@
 -->
 
 # E-learning System in Laravel
-> **Note:** This repository contains the core code of a E-learning system in laravel using TDD. (Laracasts clone)
+> **Note:** This repository contains the core code of an E-learning system in laravel using TDD. (Laracasts clone)
 
 [![Made with love by Masud Rana][madewith-shield]][linkedin-url] 
 [![status][status-shield]][linkedin-url] 
