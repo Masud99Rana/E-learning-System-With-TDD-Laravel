@@ -8770,3 +8770,7 @@ $...')
 #58 D:\\xampp\\htdocs\\laracasts\\vendor\\phpunit\\phpunit\\phpunit(61): PHPUnit\\TextUI\\Command::main()
 #59 {main}
 "} 
+[2020-02-21 17:12:36] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at D:\\xampp\\htdocs\\laracasts\\vendor\\laravel\\framework\\src\\Illuminate\\Contracts\\Support\\Htmlable.php:5)
+[stacktrace]
+#0 {main}
+"} 

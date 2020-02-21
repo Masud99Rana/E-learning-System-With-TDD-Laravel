@@ -1,78 +1,192 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<!--
+*** Md. Masud Rana
+*** Mail: Masud.letsCode@gmail.com
+*** The design of this template took my 1 day.
+*** Happy Learning, Happy Coding.
+[![Made with love by Masud Rana][madewith-shield]][linkedin-url] 
+[![status][status-shield]][linkedin-url] 
+[![Laravel][laravel-shield]][laravel-url]
+[![PHP][php-shield]][php-url]
+[![lumen][lumen-shield]][lumen-url]
+[![Vue js][vue-shield]][vue-url]
+[![NPM][npm-shield]][npm-url]
+[![Node Js][nodejs-shield]][nodejs-url]
+[![javascript][javascript-shield]][javascript-url]
+[![bootstrap][bootstrap-shield]][bootstrap-url]
+<a href="https://en.wikipedia.org/wiki/Bangladesh"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/800px-Flag_of_Bangladesh.svg.png" alt="Logo" width="40" height="20"> </a>
+[![My LinkedIn Profile][linkedin-shield]][linkedin-url]
+[![Gmail][gmail-shield]][gmail-url]
+-->
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Blog+Cms in laravel
+> **Note:** This repository contains the core code of a E-learning system in laravel using TDD. (Laracasts clone)
 
-## About Laravel
+[![Made with love by Masud Rana][madewith-shield]][linkedin-url] 
+[![status][status-shield]][linkedin-url] 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<a href="https://en.wikipedia.org/wiki/Bangladesh"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/800px-Flag_of_Bangladesh.svg.png" alt="Logo" width="40" height="20"> </a>
+[![My LinkedIn Profile][linkedin-shield]][linkedin-url]
+[![Gmail][gmail-shield]][gmail-url]
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## About The Project
+An Electronic Learning System is an educational platform that takes place over the Internet. I have developed this project inspired by Laracasts using TDD.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Built With
+The major technologies that i have used to build this project.
+Here are:
+* Laravel
+* Vue.js
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* User can subscribe series
+* Filter popular series
+* Feedback for series
+* Insturctor can maintain own series
+* Testing Redis database
+* Caching using Redis
+* Stripe payment method integrated.
 
-## Laravel Sponsors
+**And so much more !!! Explore them by following "[Getting Started](#getting-started)" section.**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Basic understanding of the technologies that i have mentioned in "[Built With](#built-with)" Section.
+
+### Installation
+
+1. Clone the repo
+```sh
+https://github.com/Masud99Rana/E-learning-System.git
+```
+2. Run **composer install**
+3. Run **php artisan key:generate**
+4. Run **php artisan migrate --seed**
+
+That's good. Now, you are ready to go. </br>
+If you face any kind of problem to installation this project feel free to inform me.
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+> **Note: I will update section soon.**
+
+<!-- ROADMAP -->
+## Roadmap
+
+> **Note: I will update section soon.**
+
+
+<!-- CONTRIBUTING -->
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Any contributions you make are **greatly appreciated**.
 
-## Code of Conduct
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/newFeature`)
+3. Commit your Changes (`git commit -m 'Add some newFeature'`)
+4. Push to the Branch (`git push origin feature/newFeature`)
+5. Open a Pull Request
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
+<!-- LICENSE -->
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This is an open-source project. You can use or distribute it any legal purpose.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Md. Masud Rana
+
+[![My LinkedIn Profile][linkedin-shield]][linkedin-url]
+[![Gmail][gmail-shield]][gmail-url]
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+> **Note: I will update section soon.**
+
+
+## Heartiest Thanks
+> **Note: I will update section soon.**
+
+* Thank you so much! :sparkling_heart:
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!--  https://github.com/tchapi/markdown-cheatsheet -->
+<!-- https://www.webfx.com/tools/emoji-cheat-sheet/ -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+
+[masud-version]: https://img.shields.io/badge/Masud-v7.8.*-blue?style=flat-square
+
+[status-shield]: https://img.shields.io/badge/Status-finished-success?style=flat-square
+
+
+
+[laravel-shield]:https://img.shields.io/badge/laravel-v5.8-555.svg?style=flat-square&logo=laravel&labelColor=FF2D20&logoColor=fff
+[laravel-url]: https://laravel.com
+
+[vue-shield]:https://img.shields.io/badge/vue.js-v2.8-black.svg?style=flat-square&logo=vue.js&color=#4FC08D
+[vue-url]: https://vuejs.org/
+
+[php-shield]:https://img.shields.io/badge/php-v2.8-555.svg?style=flat-square&logo=php&labelColor=777BB4&logoColor=fff
+[php-url]: https://php.net
+
+[javascript-shield]:https://img.shields.io/badge/-JavaScript-555.svg?style=flat-square&logo=javascript&labelColor=F7DF1E&logoColor=fff
+[javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+[lumen-shield]:https://img.shields.io/badge/Lemen-v1.7-555.svg?style=flat-square&logo=lumen&labelColor=E74430&logoColor=fff
+[lumen-url]: https://lumen.laravel.com/
+
+
+[npm-shield]:https://img.shields.io/badge/npm-v2.8-CB3837.svg?style=flat-square&logo=npm
+[npm-url]: https://nodejs.org/en/
+
+[nodejs-shield]:https://img.shields.io/badge/Node.Js-v1.7-555.svg?style=flat-square&logo=node.js&labelColor=339933&logoColor=fff
+[nodejs-url]: https://nodejs.org/en/
+
+[bootstrap-shield]:https://img.shields.io/badge/Bootstrap-v1.7-success.svg?style=flat-square&logo=bootstrap&labelColor=563D7C&logoColor=fff
+[bootstrap-url]: https://getbootstrap.com/
+
+
+[madewith-shield]:https://img.shields.io/badge/R-Made%20With%20Love-success?style=flat-square&labelColor=00cec9&logo=monzo&logoColor=fff&color=00b894
+
+[linkedin-shield]: https://img.shields.io/badge/-MasudRana99mr-black.svg?style=flat-square&logo=linkedin&color=555
+[linkedin-url]: https://www.linkedin.com/in/masudrana99mr
+
+
+[gmail-shield]: https://img.shields.io/badge/-Masud.letscode@gmail.com-555.svg?style=flat-square&logo=gmail&labelColor=D14836&logoColor=fff
+[gmail-url]: mailto::masud.letscode@gmail.com
+
+
+
+<!-- My Note -->
+<!--
+*** <img src="images/logo.png" alt="Logo" width="80" height="80">
+*** 
+*** [screenshot]: images/screenshot.png
+*** [![Product Name Screen Shot][screenshot]](https://example.com)
+*** 
+*** 
+***
+*** 
+*** 
+***
+-->
