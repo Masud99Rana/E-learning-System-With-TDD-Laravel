@@ -18,7 +18,7 @@
 [![Gmail][gmail-shield]][gmail-url]
 -->
 
-# Blog+Cms in laravel
+# E-learning System in Laravel
 > **Note:** This repository contains the core code of a E-learning system in laravel using TDD. (Laracasts clone)
 
 [![Made with love by Masud Rana][madewith-shield]][linkedin-url] 
@@ -43,10 +43,11 @@ Here are:
 * User can subscribe series
 * Filter popular series
 * Feedback for series
-* Insturctor can maintain own series
+* Instuctor can maintain own series
 * Testing Redis database
 * Caching using Redis
-* Stripe payment method integrated.
+* Stripe payment method integrated
+* Advanced test driven development techniques
 
 **And so much more !!! Explore them by following "[Getting Started](#getting-started)" section.**
 
